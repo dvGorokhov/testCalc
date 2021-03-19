@@ -22,11 +22,11 @@
                 Удобное время<p class="star">*</p>
               <select-box :lists="time_arr"></select-box>
             </div>
-            <div div class="d-flex mt-5" style="flex-wrap: wrap">
+            <div div class="mt-5" style="column-gap: 30%;column-count: 2;">
               <vc-input class="" type="number" v-model="age">Возраст, лет</vc-input>
-              <vc-input class="ml-5" type="number" v-model="weigt">Вес, в кг</vc-input>
+              <vc-input class="mt-5" type="number" v-model="weigt">Вес, в кг</vc-input>
               <vc-input class="mt-5" type="number" v-model="size">Рост, в см</vc-input>
-              <span class="label mt-5 ml-5">
+              <div class="label mt-5">
                 Пол
                 <div class="checkbox mt-3">
                   <input type="checkbox" id="c1" v-model="manCheck" /><label
@@ -41,7 +41,7 @@
                     >Женщина</label
                   >
                 </div>
-              </span>
+              </div>
             </div>
           </page-item>
           <page-item>
@@ -62,7 +62,7 @@
           <page-item>
             <label class="mt-5">
               Продукты, которые не хотите включать в рацион
-              <textarea class="mt-3"></textarea>
+              <textarea class="mt-3 textarea"></textarea>
             </label>
             <div class="d-flex">
               <label value="on" class="switch_box mr-3">
@@ -74,8 +74,7 @@
               >
                 Согласие на обработку
                 <p
-                  style="display: contents;
-    text-decoration: underline;"
+                  style="display: contents;text-decoration: underline;"
                 >
                   Персональных данных
                 </p>
@@ -105,7 +104,7 @@
               </defs>
               </svg>
             </card>
-            <card title="Super Fit" body="Похудей активно" class="ml-3 mr-3">
+            <card title="Super Fit" body="Похудей активно">
               <svg width="140" height="97" viewBox="0 0 140 97" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect width="140" height="97" fill="url(#pattern0)"/>
               <defs>
@@ -229,7 +228,7 @@ export default {
         },
         {
           id: 3,
-          name: "Не Знаю"
+          name: "Не знаю"
         },
       ],
       action: 1.2,
@@ -265,9 +264,9 @@ export default {
         alert('Дайте согласие на обработку данных')
       }
       if (man.checked) {
-        this.res = (10*this.weigt + 6.25*this.size - 5*this.age + 5) * r
+        this.res = ((10*this.weigt + 6.25*this.size - 5*this.age + 5) * r).toFixed(1)
       } else {
-        this.res = (10*this.weigt + 6.25*this.size - 5*this.age - 161) * r
+        this.res = ((10*this.weigt + 6.25*this.size - 5*this.age - 161) * r).toFixed(1)
       }
         footer.classList.remove('hide')
     }

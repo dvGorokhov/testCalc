@@ -83,8 +83,8 @@ export default {
 	.dropdown {
 		border-bottom-left-radius: 26px;
 		border-bottom-right-radius: 26px;
-		text-align: center;
-		padding: 0;
+		text-align: left;
+		padding: 0 0 0 40px;
 	}
 	.wrapper-dropdown-1 .dropdown {
 		position: absolute;
